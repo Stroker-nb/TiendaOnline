@@ -1,10 +1,12 @@
-FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
-WORKDIR /workspace
-COPY . .
-RUN mvn -pl api-gateway -am clean package -DskipTests
-
-FROM eclipse-temurin:21-jre-alpine
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
-COPY --from=build /workspace/producto-service/target/*.jar app.jar
-EXPOSE 10000
+COPY . .
+
+RUN mvn clean package -DskipTests
+
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+
+COPY --from=build /app/producto-service/target/*.jar app.jar
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
