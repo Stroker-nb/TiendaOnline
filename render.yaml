@@ -4,7 +4,7 @@ services:
     name: tiendaonline-cliente
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/cliente-service.DockerFile
+    dockerfilePath: ./render/docker/cliente-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -15,7 +15,7 @@ services:
     name: tiendaonline-producto
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/producto-service.DockerFile
+    dockerfilePath: ./render/docker/producto-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -26,7 +26,7 @@ services:
     name: tiendaonline-pedido
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/pedido-service.DockerFile
+    dockerfilePath: ./render/docker/pedido-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -41,7 +41,7 @@ services:
     name: tiendaonline-pago
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/pago-service.DockerFile
+    dockerfilePath: ./render/docker/pago-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -56,7 +56,7 @@ services:
     name: tiendaonline-envio
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/envio-service.DockerFile
+    dockerfilePath: ./render/docker/envio-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -71,7 +71,7 @@ services:
     name: tiendaonline-auth
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/auth-service.DockerFile
+    dockerfilePath: ./render/docker/auth-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -82,7 +82,7 @@ services:
     name: tiendaonline-resena
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/resena-service.DockerFile
+    dockerfilePath: ./render/docker/resena-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -97,7 +97,7 @@ services:
     name: tiendaonline-distribuidor
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/distribuidor-service.DockerFile
+    dockerfilePath: ./render/docker/distribuidor-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -110,7 +110,7 @@ services:
     name: tiendaonline-sucursal
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/sucursal-service.DockerFile
+    dockerfilePath: ./render/docker/sucursal-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -121,7 +121,7 @@ services:
     name: tiendaonline-trabajador
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/trabajador-service.DockerFile
+    dockerfilePath: ./render/docker/trabajador-service.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -134,7 +134,7 @@ services:
     name: tiendaonline-gateway
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/api-gateway.DockerFile
+    dockerfilePath: ./render/docker/api-gateway.Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
