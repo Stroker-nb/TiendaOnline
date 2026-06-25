@@ -4,7 +4,7 @@ services:
     name: tiendaonline-cliente
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/cliente-service.Dockerfile
+    dockerfilePath: ./render/docker/cliente-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -15,7 +15,7 @@ services:
     name: tiendaonline-producto
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/producto-service.Dockerfile
+    dockerfilePath: ./render/docker/producto-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -26,13 +26,11 @@ services:
     name: tiendaonline-pedido
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/pedido-service.Dockerfile
+    dockerfilePath: ./render/docker/pedido-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
-      - key: EUREKA_ENABLED
-        value: false
-      - key: APP_DISCOVERY_ENABLED
+      - key: EURENA_ENABLED
         value: false
       - key: CLIENTE_SERVICE_URL
         value: https://tiendaonline-cliente.onrender.com
@@ -43,13 +41,11 @@ services:
     name: tiendaonline-pago
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/pago-service.Dockerfile
+    dockerfilePath: ./render/docker/pago-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
-        value: false
-      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: PEDIDO_SERVICE_URL
         value: https://tiendaonline-pedido.onrender.com
@@ -60,13 +56,11 @@ services:
     name: tiendaonline-envio
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/envio-service.Dockerfile
+    dockerfilePath: ./render/docker/envio-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
-        value: false
-      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: PEDIDO_SERVICE_URL
         value: https://tiendaonline-pedido.onrender.com
@@ -77,7 +71,7 @@ services:
     name: tiendaonline-auth
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/auth-service.Dockerfile
+    dockerfilePath: ./render/docker/auth-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -88,13 +82,11 @@ services:
     name: tiendaonline-resena
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/resena-service.Dockerfile
+    dockerfilePath: ./render/docker/resena-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
-        value: false
-      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: CLIENTE_SERVICE_URL
         value: https://tiendaonline-cliente.onrender.com
@@ -105,13 +97,11 @@ services:
     name: tiendaonline-distribuidor
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/distribuidor-service.Dockerfile
+    dockerfilePath: ./render/docker/distribuidor-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
-        value: false
-      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: PRODUCTO_SERVICE_URL
         value: https://tiendaonline-producto.onrender.com
@@ -120,7 +110,7 @@ services:
     name: tiendaonline-sucursal
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/sucursal-service.Dockerfile
+    dockerfilePath: ./render/docker/sucursal-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
@@ -131,13 +121,11 @@ services:
     name: tiendaonline-trabajador
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/trabajador-service.Dockerfile
+    dockerfilePath: ./render/docker/trabajador-service.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
-        value: false
-      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: SUCURSAL_SERVICE_URL
         value: https://tiendaonline-sucursal.onrender.com
@@ -146,13 +134,12 @@ services:
     name: tiendaonline-gateway
     runtime: docker
     plan: free
-    dockerfilePath: ./render/docker/api-gateway.Dockerfile
+    dockerfilePath: ./render/docker/api-gateway.DockerFile
     dockerContext: .
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
         value: false
-
       - key: CLIENTE_SERVICE_URL
         value: https://tiendaonline-cliente.onrender.com
       - key: PRODUCTO_SERVICE_URL
