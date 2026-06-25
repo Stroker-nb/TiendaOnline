@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Etapas 02 a 05 - API Gateway 8080 (GET ONLY - TiendaOnline)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "01 GET clientes por Gateway",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/clientes"
+      }
+    },
+
+    {
+      "name": "02 GET productos por Gateway",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/productos"
+      }
+    },
+
+    {
+      "name": "03 GET pedidos por Gateway",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/pedidos"
+      }
+    },
+
+    {
+      "name": "04 GET pagos por Gateway",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/pagos"
+      }
+    },
+
+    {
+      "name": "05 GET envios por Gateway",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/envios"
+      }
+    },
+
+    {
+      "name": "06 GET auth (si existe endpoint de consulta)",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/auth"
+      }
+    },
+
+    {
+      "name": "07 GET resenas",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/resenas"
+      }
+    },
+
+    {
+      "name": "08 GET distribuidores",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/distribuidores"
+      }
+    },
+
+    {
+      "name": "09 GET sucursales",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/sucursales"
+      }
+    },
+
+    {
+      "name": "10 GET trabajadores",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v1/trabajadores"
+      }
+    }
+
+  ]
+}

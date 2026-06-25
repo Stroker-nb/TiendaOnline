@@ -1,0 +1,121 @@
+
+
+services:
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  cliente-service:
+    build: ./cliente-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  producto-service:
+    build: ./producto-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  distribuidor-service:
+    build: ./distribuidor-service
+    ports:
+      - "8084:8084"
+    depends_on:
+      - eureka-server
+      - producto-service
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  sucursal-service:
+    build: ./distribuidor-service
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  trabajador-service:
+    build: ./trabajador-service
+    ports:
+      - "8086:8086"
+    depends_on:
+      - eureka-server
+      - sucursal-service
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  pedido-service:
+      build: ./pedido-service
+      ports:
+        - "8087:8087"
+      depends_on:
+        - eureka-server
+        - producto-service
+        - cliente-service
+      environment:
+        - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  resena-service:
+    build: ./resena-service
+    ports:
+      - "8088:8088"
+    depends_on:
+      - eureka-server
+      - producto-service
+      - cliente-service
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  envio-service:
+    build: ./envio-service
+    ports:
+      - "8089:8089"
+    depends_on:
+      - eureka-server
+      - pedido-service
+      - cliente-service
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+  pago-service:
+    build: ./envio-service
+    ports:
+      - "8090:8090"
+    depends_on:
+      - eureka-server
+      - pedido-service
+      - cliente-service
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka/
+
+
+
+
+
