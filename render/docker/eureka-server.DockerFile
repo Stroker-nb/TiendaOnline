@@ -1,7 +1,7 @@
 FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
 WORKDIR /workspace
 COPY . .
-RUN mvn -pl api-gateway -am clean package -DskipTests
+RUN mvn -pl eureka-server -am clean package -DskipTests
 
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
