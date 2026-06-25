@@ -32,6 +32,8 @@ services:
     envVars:
       - key: EUREKA_ENABLED
         value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
       - key: CLIENTE_SERVICE_URL
         value: https://tiendaonline-cliente.onrender.com
       - key: PRODUCTO_SERVICE_URL
@@ -47,6 +49,8 @@ services:
     envVars:
       - key: EUREKA_ENABLED
         value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
       - key: PEDIDO_SERVICE_URL
         value: https://tiendaonline-pedido.onrender.com
       - key: CLIENTE_SERVICE_URL
@@ -61,6 +65,8 @@ services:
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
+        value: false
+      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: PEDIDO_SERVICE_URL
         value: https://tiendaonline-pedido.onrender.com
@@ -88,6 +94,8 @@ services:
     envVars:
       - key: EUREKA_ENABLED
         value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
       - key: CLIENTE_SERVICE_URL
         value: https://tiendaonline-cliente.onrender.com
       - key: PRODUCTO_SERVICE_URL
@@ -102,6 +110,8 @@ services:
     healthCheckPath: /actuator/health
     envVars:
       - key: EUREKA_ENABLED
+        value: false
+      - key: APP_DISCOVERY_ENABLED
         value: false
       - key: PRODUCTO_SERVICE_URL
         value: https://tiendaonline-producto.onrender.com
@@ -127,6 +137,8 @@ services:
     envVars:
       - key: EUREKA_ENABLED
         value: false
+      - key: APP_DISCOVERY_ENABLED
+        value: false
       - key: SUCURSAL_SERVICE_URL
         value: https://tiendaonline-sucursal.onrender.com
 
@@ -140,6 +152,7 @@ services:
     envVars:
       - key: EUREKA_ENABLED
         value: false
+
       - key: CLIENTE_SERVICE_URL
         value: https://tiendaonline-cliente.onrender.com
       - key: PRODUCTO_SERVICE_URL

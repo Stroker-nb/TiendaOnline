@@ -15,9 +15,6 @@ services:
       - envio-service
       - pago-service
 
-
-
-
     environment:
       - EUREKA_ENABLED=false
       - AUTH_SERVICE_URL=http://auth-service:8081
